@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>JS DOM</title>
+</head>
+
+<body>
+    <h1>JS DOM</h1>
+    <p id="demo">Hello World!</p>
+    <button type="button" onclick="sayHello()">Click Me!</button>
+
+    <section id="Dark Mode">
+        <h2>Ex 1 : Dark Mode</h2>
+        <!--// Ex 1 : Dark Mode -->
+        <button type="button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </section>
+    <section>
+        <h2>Ex 2 : Random Image</h2>
+        <!--// Ex2 : Random Image -->
+        <button type="button" onclick="randomImage()">Random Image</button>   
+        <img id="random-image" src="" alt="random-image"> 
+    </section>
+    <section>
+        <h2>Ex 3 : Counter</h2>
+        <!--// Ex3 : Counter -->
+        <button id="btn" type="button" onclick="count()">Count</button> 
+        <span id="counter"></span>
+    </section>
+    <section>
+        <h2>Ex 4 : Displaying a List</h2>
+        <!--// Ex4 : Displaying a List -->
+        <ul id="display_list"></ul>
+    </section>
+    <section>
+        <h2>Ex 5 : Add Item to list</h2>
+        <!--// Ex 5 : Add Item to list -->
+        <button type="button" onclick="addItem()">Add Item</button>
+
+        <h2>Ex 5 bis : Remove Item to list</h2>
+        <!--// Ex 5 bis : Remove Item to list -->
+        <button type="button" onclick="removeItem()">Remove Last Item</button>
+    </section>
+    <section>
+        <h2>Ex 6 : Displaying a list of objects</h2>
+        <!--// Ex 6 Displaying a list of objects -->
+        <ul id="display_list_object"></ul>
+    </section>
+    <section>
+        <!--// Ex 7 : Ex 7 : Displaying a list of objects with a filter -->
+        <h2>Ex 7 : Displaying a list of objects with a filter</h2>
+        <select name="filter" id="filter" value="true" onchange="displayCarsByBrand()">
+            <option value="Toyota">Toyota</option>
+            <option value="BMW">BMW</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Peugeot">Peugeot</option>
+        </select>
+
+        <ul id="display_list_car"></ul>
+       
+        <h2>Ex 7 bis Reset filter</h2>
+        <!--Ex 7 bis : Reset the filter -->
+        <button type="button" onclick="resetFilter()">Reset Filter</button>
+       
+    </section>
+
+    <section>
+        <h2>Ex 8 : Displaying a list of objects in card HTML</h2>
+        <!-- Ex 8 : Displaying a list of objects in card html -->
+        <div id="card-list"></div>
+       
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
