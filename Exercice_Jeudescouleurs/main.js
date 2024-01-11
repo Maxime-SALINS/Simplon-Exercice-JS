@@ -19,8 +19,8 @@ function ajouterCouleurSequence(sequence) {
 
 function jouerTour(sequence) {
     alert ("La séquence de couleur est : " + sequence.join(" , "));
-    let Usercolor = window.prompt("Entrez la bonne couleur : ");
-    for (const iterator of sequence) {
+    for (let iterator of sequence) {
+        let Usercolor = window.prompt("Entrez la bonne couleur : ");
         if (Usercolor !== iterator){
             return false
         }
@@ -29,11 +29,18 @@ function jouerTour(sequence) {
 }
 
 function JeuDeMemoire() {
-    let Sequence = [];
-    let score = jouerTour(Sequence);
-    while (score === true){
-        ajouterCouleurSequence(Sequence)
+    let randomSequence = [];
+    let tour = true;
+    while (tour){
+        randomSequence = ajouterCouleurSequence(randomSequence);
+        tour = jouerTour(randomSequence)
+        if (!tour){
+            alert (`Vous avez perdu la sequence était ${randomSequence.join(" , ")}`);
+            break
+        }
+        alert("Bien joué ! passe à l'étape suivante");
     }
+    alert(`Le jeu est fini votre score est : ${randomSequence.length - 1}`)
 }
 
 JeuDeMemoire()
