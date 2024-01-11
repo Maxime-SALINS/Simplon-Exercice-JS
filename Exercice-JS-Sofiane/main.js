@@ -85,5 +85,5 @@ petitTableau2 = [26 , 54 , 22 , 53 , 47 , 17 , 15];
 for (let i = 0; i < petitTableau2.length; i++) {
     let TableauContainer = document.createElement('div');
     TableauContainer.innerHTML= petitTableau2[i];
-    document.appendChild(TableauContainer);
+    document.body.appendChild(TableauContainer);
 }

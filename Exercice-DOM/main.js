@@ -4,7 +4,7 @@
 // Créez un élément HTML avec un ID unique.
 // Utilisez document.getElementById pour sélectionner cet élément.
 // Modifiez le texte de cet élément en utilisant textContent.
-element = document.getElementById('element');
+let element = document.getElementById('element');
 element.textContent = "Hello world !";
 
 // Exercice 2: Manipuler les Styles
@@ -20,12 +20,12 @@ element.style.color = "red";
 // Créez un bouton dans votre HTML.
 // Utilisez getElementById pour sélectionner le bouton.
 // Ajoutez un écouteur d'événements click qui change la couleur de fond du bouton lorsqu'il est cliqué.
-bouton = document.getElementById('btn-color');
+let bouton = document.getElementById('btn-color');
 bouton.addEventListener('click', ()=>{
     bouton.style.background = "blue";
     bouton.style.color = "white";
     bouton.style.borderRadius = "300px";
-    bouton.style.padding = "5px"
+    bouton.style.padding = "5px";
 });
 
 // Exercice 4: Sélectionner Plusieurs Éléments
@@ -34,30 +34,46 @@ bouton.addEventListener('click', ()=>{
 // Utilisez getElementsByClassName ou getElementsByTagName pour les sélectionner.
 // Modifiez le texte de tous ces éléments simultanément.
 
+let div = document.getElementsByClassName("a");
+for (let i = 0; i < div.length; i++) {
+    div[i].innerHTML = "Hello !"
+}
+//console.log(div);
+
+let div2 = document.getElementsByTagName("section");
+for (let i = 0; i < div2.length; i++) {
+    div2[i].innerHTML = "Salut !"
+}
+// console.log(div2);
+
 // Exercice 5: Création et Insertion d'Éléments
 // Objectif : Créer un nouvel élément et l'ajouter au DOM.
 // Créez un nouvel élément (par exemple, un div ou un p) en utilisant document.createElement.
 // Ajoutez du texte à cet élément.
 // Insérez cet élément dans le DOM à l'endroit souhaité.
+let newdiv = document.createElement("div");
+newdiv.innerHTML = "Salut je m'appel Maxime !";
+document.body.appendChild(newdiv);
 
 // Exercice 6: Manipulation des Attributs
 // Objectif : Modifier les attributs d'un élément (par exemple, href d'un lien).
-
 // Sélectionnez un élément (par exemple, un lien).
 // Utilisez getAttribute pour lire un attribut existant.
 // Modifiez cet attribut en utilisant setAttribute.
+let lien = document.getElementById ("lien");
+let attribut = lien.getAttribute ("href");
+lien.setAttribute("href", "https://github.com/Maxime-SALINS/Simplon-Exercice-JS");
+
 
 
 // Exercice 7: Utilisation de innerHTML
 // Objectif : Modifier le contenu HTML d'un élément.
-
 // Sélectionnez un élément par son ID.
 // Modifiez son contenu HTML en utilisant innerHTML.
 // Ajoutez des éléments HTML (comme une liste ou un paragraphe) à l'intérieur de cet élément.
 
 // Exercice 8: Manipulation de Classes CSS
 // Objectif : Ajouter, enlever et basculer des classes CSS.
-
 // Créez un élément avec une classe CSS pré-définie.
 // Utilisez classList.add pour ajouter une nouvelle classe à cet élément.
 // Utilisez classList.remove pour enlever une classe.
@@ -65,19 +81,16 @@ bouton.addEventListener('click', ()=>{
 
 // Exercice 9: Manipulation Directe des Styles
 // Objectif : Modifier directement les styles d'un élément.
-
 // Sélectionnez un élément.
 // Modifiez différents styles CSS directement en utilisant element.style.property (par exemple, element.style.backgroundColor).
 
 // Exercice 10: Travailler avec setAttribute et getAttribute
 // Objectif : Utiliser setAttribute et getAttribute pour manipuler les attributs d'un élément, le "src" d'une image par exemple.
-
 // Sélectionnez un élément (comme un lien ou une image).
 // Utilisez getAttribute pour lire un de ses attributs.
 // Changez cet attribut avec setAttribute.
 
 // Exercice 11: Création et Manipulation de Listes
 // Objectif : Créer une liste dynamique et la manipuler.
-
 // Créez une liste ul ou ol vide dans votre HTML.
 // Utilisez JavaScript pour ajouter des éléments li à la liste en utilisant appendChild ou insertBefore.
