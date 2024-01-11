@@ -7,49 +7,37 @@
 //Tant que l'utilisateur à juste, le jeu passe à l'étape suivante et le programme ajoute +1 au score
 //lorsque l'utilisateur à faux, le jeu s'arrête et le score du joueur est affiché
 
-let Sequence = [];
-let score = 0;
-
 function genererCouleurAleatoire() {
     let ColorTable = ["rouge" , "bleu" , "vert" , "jaune"];
     return ColorTable[Math.floor(Math.random() * ColorTable.length)];
 }
 
 function ajouterCouleurSequence(sequence) {
-    while (sequence.length < 7){
-        sequence.push(genererCouleurAleatoire());
-    }
+    sequence.push(genererCouleurAleatoire());
     return sequence
 }
 
 function jouerTour(sequence) {
-    alert ("La séquence de couleur est : " + ajouterCouleurSequence(sequence));
-    let UserTable = [];
-    while (UserTable.length < sequence.length) {
-        let Usercolor = window.prompt("Entrez la bonne couleur : ");
-        let Check = sequence[sequence.indexOf(Usercolor)]
-        if (Usercolor === Check) {
-            alert("ok")
-        } else {
-            alert("Pas ok")
+    alert ("La séquence de couleur est : " + sequence.join(" , "));
+    let Usercolor = window.prompt("Entrez la bonne couleur : ");
+    for (const iterator of sequence) {
+        if (Usercolor !== iterator){
+            return false
         }
-
-        UserTable.push(Usercolor);
-        console.log(Check);
-        // if (Usercolor === ajouterCouleurSequence(sequence[sequence.indexOf(Usercolor)])) {
-        //     UserTable.push(UserTable);
-        // } else {
-        //     return false
-        // }
     }
-    console.log(UserTable);
+    return true
 }
 
-jouerTour (Sequence);
+function JeuDeMemoire() {
+    let Sequence = [];
+    let score = jouerTour(Sequence);
+    while (score === true){
+        ajouterCouleurSequence(Sequence)
+    }
+}
+
+JeuDeMemoire()
 
 //console.log(genererCouleurAleatoire());
 
 // console.log(ColorTable);
-
-
-console.log(Sequence);
