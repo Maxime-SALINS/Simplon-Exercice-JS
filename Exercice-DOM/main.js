@@ -60,10 +60,20 @@ document.body.appendChild(newdiv);
 // Sélectionnez un élément (par exemple, un lien).
 // Utilisez getAttribute pour lire un attribut existant.
 // Modifiez cet attribut en utilisant setAttribute.
-let lien = document.getElementById ("lien");
-let attribut = lien.getAttribute ("href");
-lien.setAttribute("href", "https://github.com/Maxime-SALINS/Simplon-Exercice-JS");
 
+//pointe l'élement par son ID
+let monlien = document.getElementById ("lien");
+
+//Affiche la valeur de l'attribu "href"
+let attribut = monlien.getAttribute ("href");
+console.log(attribut);
+
+//Modification du lien
+monlien.setAttribute("href", "https://github.com/Maxime-SALINS/Simplon-Exercice-JS");
+
+//Affiche la nouvelle valeur de l'attribu "href"
+let newattribut = monlien.getAttribute ("href");
+console.log(newattribut);
 
 
 // Exercice 7: Utilisation de innerHTML
@@ -71,6 +81,12 @@ lien.setAttribute("href", "https://github.com/Maxime-SALINS/Simplon-Exercice-JS"
 // Sélectionnez un élément par son ID.
 // Modifiez son contenu HTML en utilisant innerHTML.
 // Ajoutez des éléments HTML (comme une liste ou un paragraphe) à l'intérieur de cet élément.
+let monElement = document.getElementById("color");
+monElement.innerHTML=`<ul>
+<li>Ma liste</li>
+<li>Ma liste</li>
+</ul>
+<p>Je suis entrain de manipuler le DOM hahah ! </p>`;
 
 // Exercice 8: Manipulation de Classes CSS
 // Objectif : Ajouter, enlever et basculer des classes CSS.
