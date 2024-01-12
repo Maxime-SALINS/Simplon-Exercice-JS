@@ -66,14 +66,14 @@ let monlien = document.getElementById ("lien");
 
 //Affiche la valeur de l'attribu "href"
 let attribut = monlien.getAttribute ("href");
-console.log(attribut);
+//console.log(attribut);
 
 //Modification du lien
 monlien.setAttribute("href", "https://github.com/Maxime-SALINS/Simplon-Exercice-JS");
 
 //Affiche la nouvelle valeur de l'attribu "href"
 let newattribut = monlien.getAttribute ("href");
-console.log(newattribut);
+//console.log(newattribut);
 
 
 // Exercice 7: Utilisation de innerHTML
@@ -94,11 +94,20 @@ monElement.innerHTML=`<ul>
 // Utilisez classList.add pour ajouter une nouvelle classe à cet élément.
 // Utilisez classList.remove pour enlever une classe.
 // Utilisez classList.toggle pour basculer une classe lors d'un événement, comme un clic.
+let maclass = document.getElementById("pipi");
+maclass.classList.add ("class_css1");
+maclass.classList.remove("class_css");
+let btn1 = document.getElementById("btn-class");
+btn1.addEventListener("click", ()=>{
+    maclass.classList.toggle("class_css");
+});
 
 // Exercice 9: Manipulation Directe des Styles
 // Objectif : Modifier directement les styles d'un élément.
 // Sélectionnez un élément.
 // Modifiez différents styles CSS directement en utilisant element.style.property (par exemple, element.style.backgroundColor).
+abc.style.color = "blue";
+efg.style.fontWeight = "bolder";
 
 // Exercice 10: Travailler avec setAttribute et getAttribute
 // Objectif : Utiliser setAttribute et getAttribute pour manipuler les attributs d'un élément, le "src" d'une image par exemple.
@@ -106,7 +115,16 @@ monElement.innerHTML=`<ul>
 // Utilisez getAttribute pour lire un de ses attributs.
 // Changez cet attribut avec setAttribute.
 
+image.getAttribute("src");
+image.setAttribute("src", "https://picsum.photos/200/300.webp");
+
 // Exercice 11: Création et Manipulation de Listes
 // Objectif : Créer une liste dynamique et la manipuler.
 // Créez une liste ul ou ol vide dans votre HTML.
 // Utilisez JavaScript pour ajouter des éléments li à la liste en utilisant appendChild ou insertBefore.
+
+let btn2 = document.getElementById("btn-add");
+btn2.addEventListener("click", function(){
+    let liElement = document.createElement("li");
+    ul1.appendChild(liElement);
+})
