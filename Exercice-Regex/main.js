@@ -31,6 +31,6 @@ function testAlpha (input , arrayCompare) {
     return true
 };
 
-console.log(testAlpha(username , newTable));
-console.log(testAlpha(userPhoneNumber , newTable));
+console.log(testAlpha(username , alphabet));
+console.log(testAlpha(userPhoneNumber , number));
 console.log(testAlpha(emailUser , newTable));
